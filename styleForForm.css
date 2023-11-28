@@ -1,0 +1,83 @@
+/* Set the font family for the entire body */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Styling for the form container */
+  .form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Center-align the heading and add margin at the bottom */
+  .form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for each form group */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for form group labels */
+  .form-group label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  /* Styling for various form input types */
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group select,
+  .form-group textarea,
+  .form-group input[type="datetime-local"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Allow vertical resizing for textareas */
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  /* Styling for select dropdowns */
+  .form-group select {
+    width: 100%;
+  }
+  
+  /* Styling for the submit button */
+  .form-group input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Styling for small helper text */
+  .form-group small {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  /* New styles for error messages */
+  
+  /* Position the error message relatively within the form group */
+  .form-group {
+    position: relative;
+  }
+  
+  /* Styling for error messages */
+  .error {
+    color: red;
+    display: block;
+    margin-top: 5px;
+  }

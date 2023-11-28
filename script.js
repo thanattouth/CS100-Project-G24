@@ -1,11 +1,3 @@
-/*
-  File: script.js
-  Author: CS100 Team
-  Date Created: 23 July 2023
-  Copyright: CSTU
-  Description: JS code of CSTU Passport that validate with JS
-*/
-
 const config = {
     backendUrl: "http://localhost:8000/", // Default backend URL
   };
