@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+  <title>Forms - CSTU Passport</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Form Container -->
+  <div class="form-container">
+    <h1>CSTU Passport</h1>
+    <!-- Main Form -->
+    <form id="myForm" action="#" method="post">
+      <!-- Firstname and Lastname Field -->
+      <div class="form-group">
+        <label for="fullname">Firstname and Lastname</label>
+        <input type="text" id="fullname" name="fullname" />
+        <small>Only enter your first name and last name, middle name is not necessary.</small>
+        <span id="fullnameError" class="error"></span>
+      </div>
+      
+      <!-- Student ID Field -->
+      <div class="form-group">
+        <label for="studentID">Student ID</label>
+        <input type="text" id="studentID" name="studentID" />
+        <small>Please enter your 10-digit student ID.</small>
+        <span id="studentIDError" class="error"></span>
+      </div>
+      
+      <!-- University Email Field -->
+      <div class="form-group">
+        <label for="email">University Email</label>
+        <input type="email" id="email" name="email" />
+        <small>Please provide your university email in the format "xxx.yyy@dome.tu.ac.th".</small>
+        <span id="emailError" class="error"></span>
+      </div>
+
+      <!-- Work/Activity Title Field -->
+      <div class="form-group">
+        <label for="workTitle">Work/Activity Title</label>
+        <input type="text" id="workTitle" name="workTitle" />
+      </div>
+
+      <!-- Type of Work/Activity Field -->
+      <div class="form-group">
+        <label for="activityType">Type of Work/Activity</label>
+        <select id="activityType" name="activityType">
+          <option value="" disabled selected>Select an option</option>
+        </select>
+      </div>
+      <!-- <div class="form-group">
+        <label for="activityType">Type of Work/Activity</label>
+        <select id="activityType" name="activityType">
+          <option value="" disabled selected>Select an option</option>
+          <option value="Course">Course</option>
+          <option value="Activity">Activity</option>
+          <option value="Work">Work</option>
+          <option value="Research">Research</option>
+          <option value="Sports">Sports</option>
+          <option value="Competition">Competition</option>
+          <option value="Computer Science">Computer Science</option>
+        </select>
+      </div> -->
+
+      <!-- Academic Year Field -->
+      <div class="form-group">
+        <label for="academicYear">Academic Year</label>
+        <select id="academicYear" name="academicYear">
+          <option value="" disabled selected>Select an option</option>
+          <option value="2561">2561</option>
+          <option value="2562">2562</option>
+          <option value="2563">2563</option>
+          <option value="2564">2564</option>
+          <option value="2565">2565</option>
+          <option value="2566">2566</option>
+          <option value="2567">2567</option>
+          <option value="2568">2568</option>
+          <option value="2569">2569</option>
+        </select>
+      </div>
+
+      <!-- Semester Field -->
+      <div class="form-group">
+        <label for="semester">Semester</label>
+        <select id="semester" name="semester">
+          <option value="" disabled selected>Select an option</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="Summer">Summer</option>
+        </select>
+      </div>
+
+      <!-- Start Date/Time Field -->
+      <div class="form-group">
+        <label for="startDate">Start Date/Time</label>
+        <input type="datetime-local" id="startDate" name="startDate" />
+      </div>
+
+      <!-- End Date/Time Field -->
+      <div class="form-group">
+        <label for="endDate">End Date/Time</label>
+        <input type="datetime-local" id="endDate" name="endDate" />
+      </div>
+
+      <!-- Location Field -->
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" />
+      </div>
+
+      <!-- Description Field -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="4"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
