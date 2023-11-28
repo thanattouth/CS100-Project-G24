@@ -29,11 +29,15 @@ const config = {
   // Function to validate Student ID
   function validateStudentID() {
     const studentIDInput = document.getElementById("studentID");
-    const studentIDPattern = /^\d{10}$/;
+    const studentIDPattern = /^[4-6][0-9]\d{8}$/;
+    const IDcheck = studentIDInput.value.split("", 1)
     const errorElement = document.getElementById("studentIDError");
   
     if (!studentIDPattern.test(studentIDInput.value)) {
-      errorElement.textContent = "Please enter a 10-digit Student ID.";
+      errorElement.textContent = "Please enter a your 10-digit Student ID.";
+      return false;
+    } else if (IDcheck < 4 || IDcheck > 6) {
+      errorElement.textContent = "Please enter a your 10-digit Student ID.";
       return false;
     } else {
       errorElement.textContent = ""; // Clear the error message when valid
