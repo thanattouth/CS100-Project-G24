@@ -7,10 +7,10 @@ const port = 8000;
 // Function to validate Firstname and Lastname
 function validateName() {
   const fullnameInput = document.getElementById("fullname");
-  const names = fullnameInput.value.trim().split(" ");
+  const namesPattern = fullnameInput.value.trim().split(" ");
   const errorElement = document.getElementById("fullnameError");
 
-  if (names.length !== 2) {
+  if (namesPattern.length !== 2) {
     errorElement.textContent = "Please enter both your Firstname and Lastname.";
     return false;
   } else {
@@ -26,7 +26,7 @@ function validateStudentID() {
   const errorElement = document.getElementById("studentIDError");
 
   if (!studentIDPattern.test(studentIDInput.value)) {
-    errorElement.textContent = "Please enter a 10-digit Student ID.";
+    errorElement.textContent = "Please enter your 10-digit Student ID.";
     return false;
   } else {
     errorElement.textContent = ""; // Clear the error message when valid
