@@ -81,3 +81,13 @@ body {
     display: block;
     margin-top: 5px;
   }
+
+  .submit-show {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    color: black;
+    text-align: center;
+  }

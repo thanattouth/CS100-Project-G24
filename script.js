@@ -9,6 +9,7 @@ function validateName() {
   const fullnameInput = document.getElementById("fullname");
   const namesPattern = fullnameInput.value.trim().split(" ");
   const errorElement = document.getElementById("fullnameError");
+  document.getElementById("show1").innerHTML = fullnameInput.value;
 
   if (namesPattern.length !== 2) {
     errorElement.textContent = "Please enter both your Firstname and Lastname.";
@@ -24,6 +25,7 @@ function validateStudentID() {
   const studentIDInput = document.getElementById("studentID");
   const studentIDPattern = /^[4-6][0-9]\d{8}$/;
   const errorElement = document.getElementById("studentIDError");
+  document.getElementById("show2").innerHTML = studentIDInput.value;
 
   if (!studentIDPattern.test(studentIDInput.value)) {
     errorElement.textContent = "Please enter your 10-digit Student ID.";
@@ -39,6 +41,7 @@ function validateEmail() {
   const emailInput = document.getElementById("email");
   const emailPattern = /^.+@dome\.tu\.ac\.th$/;
   const errorElement = document.getElementById("emailError");
+  document.getElementById("show3").innerHTML = emailInput.value;
 
   if (!emailPattern.test(emailInput.value)) {
     errorElement.textContent =
@@ -74,6 +77,9 @@ async function fetchActivityTypes() {
   }
 }
 
+const workType = document.getElementById("workTitle");
+document.getElementById("show4").innerHTML = workType.value;
+
 // Function to populate activity types in the select element
 function populateActivityTypes(activityTypes) {
   const activityTypeSelect = document.getElementById("activityType");
@@ -93,7 +99,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 // Function to submit the form
-// Function to submit the form
 async function submitForm(event) {
   event.preventDefault();
 
@@ -106,6 +111,9 @@ async function submitForm(event) {
   const endDateInput = document.getElementById("endDate").value;
   const startDate = new Date(startDateInput);
   const endDate = new Date(endDateInput);
+  document.getElementById("show8").innerHTML = startDate.value;
+  document.getElementById("show9").innerHTML = endDate.value;
+  
 
   if (endDate <= startDate) {
     alert("End datetime should be after the start datetime.");
