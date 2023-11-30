@@ -1,3 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+a :hover {
+    color: #555;
+}
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -13,16 +23,14 @@ header {
     color: #fff;
     text-align: justify;
     padding: 1px;
-    }
+}
 .Menubar {
-    word-spacing: 10em;
-
+    word-spacing: 1rem;
 }
 nav {
-    background-color: #555;
+    background-color: #ffffff;
     overflow: hidden;
 }
-
 nav a {
     float: left;
     display: block;
@@ -31,11 +39,9 @@ nav a {
     padding: 14px 16px;
     text-decoration: none;
 }
-
 section {
     padding: 20px;
 }
-
 footer {
     background-color: #333;
     color: #fff;
@@ -47,11 +53,40 @@ footer {
 }
 html {
     scroll-behavior: smooth;
+    font-size: calc(60% + 0.8vmin);
 }
 h1 {
-    padding-right: 10em;
-    padding-left: 50px;
+    padding-right: 7rem;
+    padding-left: 1rem;
 }
-h2 {
-    text-align: center;
+.home {
+    padding: 2rem 2rem 2rem 2rem;
 }
+.about {
+    padding: 2rem 2rem 2rem 2rem;
+}
+.contact {
+    padding: 2rem 2rem 2rem 2rem;
+}
+.about ul li {
+    margin-left: 12rem;
+    margin-right: 12rem;
+}
+
+/* responsive */
+[class*="col-"] {
+    float: left;
+}
+  
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
