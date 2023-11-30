@@ -10,7 +10,6 @@ a :hover {
     color: #555;
 }
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -59,17 +58,14 @@ html {
     font-size: calc(60% + 0.8vmin);
 }
 h1 {
-    padding-right: 7rem;
+    padding-right: 0;
     padding-left: 1rem;
 }
 .home {
     padding: 2rem 2rem 2rem 2rem;
 }
-.home h2 {
-    font-size: 3rem;
-}
 .home h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .about {
     padding: 2rem 2rem 2rem 2rem;
@@ -77,10 +73,23 @@ h1 {
 .about h2 {
     text-align: center;
     margin-bottom: 5rem;
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+.about ul {
+    align-items: center;
+    text-align: center;
 }
 .about ul li {
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.about p {
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
 }
 .contact {
     padding: 2rem 2rem 2rem 2rem;
@@ -103,27 +112,144 @@ h1 {
 .contact ul li a p {
     color: white;
 }
+.wrapper {
+    display: flex;
+}
+.wrapper .static-txt {
+    color: black;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.static-txt span {
+    position: relative;
+    color: green;
+    margin-left: 1rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.static-txt span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid green;
+    left: 0;
+    animation: typing 2.5s steps(11) infinite;
+    background-color: white;
+}
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -20px 0 20px;
+    }
+}
 
 /* responsive */
+/* For mobile phones: */
 [class*="col-"] {
-    float: left;
+    width: 100%;
 }
   
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
+@media only screen and (min-width: 600px) {
+/* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+  
+@media only screen and (min-width: 768px) {
+/* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
 
-img {
+nav ul li img {
     width: 100%;
     max-width: 16rem;
     height: auto;
+}
+@media only screen and (min-width: 600px) {
+    .about ul li img {
+        width: 80%;
+        max-width: 16rem;
+        height: auto;
+    }
+    .about {
+        padding: 2rem 2rem 2rem 2rem;
+    }
+    .about h2 {
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+    .about ul {
+        align-items: center;
+        text-align: center;
+    }
+    .about ul li {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
+@media only screen and (max-width: 599px) {
+    .about ul li img {
+        width: 50%;
+        max-width: 16rem;
+        height: auto;
+    }
+    .about ul {
+        align-items: center;
+        text-align: center;
+    }
+    .about ul li {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    .about h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        background-color: black;
+        color: white;
+        border-radius: 0.5rem;
+    }
+}
+@media only screen and (min-width: 821px) {
+    .about ul li img {
+        width: 100%;
+        max-width: 16rem;
+        height: auto;
+    }
+    .about {
+        padding: 2rem 2rem 2rem 2rem;
+    }
+    .about h2 {
+        text-align: center;
+        margin-bottom: 7rem;
+    }
+    .about ul {
+        align-items: center;
+        text-align: center;
+    }
+    .about ul li {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
 }
