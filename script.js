@@ -23,7 +23,7 @@ function validateName() {
 // Function to validate Student ID
 function validateStudentID() {
   const studentIDInput = document.getElementById("studentID");
-  const studentIDPattern = /^[4-6][0-9]\d{8}$/;
+  const studentIDPattern = /^[4-6][0-9]\d{8}$/; // add more validate student ID
   const errorElement = document.getElementById("studentIDError");
   document.getElementById("show2").innerHTML = studentIDInput.value; //add show your text after input
 
