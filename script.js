@@ -9,7 +9,7 @@ function validateName() {
   const fullnameInput = document.getElementById("fullname");
   const namesPattern = fullnameInput.value.trim().split(" ");
   const errorElement = document.getElementById("fullnameError");
-  document.getElementById("show1").innerHTML = fullnameInput.value;
+  document.getElementById("show1").innerHTML = fullnameInput.value; //add show your text after input
 
   if (namesPattern.length !== 2) {
     errorElement.textContent = "Please enter both your Firstname and Lastname.";
@@ -25,7 +25,7 @@ function validateStudentID() {
   const studentIDInput = document.getElementById("studentID");
   const studentIDPattern = /^[4-6][0-9]\d{8}$/;
   const errorElement = document.getElementById("studentIDError");
-  document.getElementById("show2").innerHTML = studentIDInput.value;
+  document.getElementById("show2").innerHTML = studentIDInput.value; //add show your text after input
 
   if (!studentIDPattern.test(studentIDInput.value)) {
     errorElement.textContent = "Please enter your 10-digit Student ID.";
@@ -41,11 +41,27 @@ function validateEmail() {
   const emailInput = document.getElementById("email");
   const emailPattern = /^.+@dome\.tu\.ac\.th$/;
   const errorElement = document.getElementById("emailError");
-  document.getElementById("show3").innerHTML = emailInput.value;
+  document.getElementById("show3").innerHTML = emailInput.value; //add show your text after input
 
   if (!emailPattern.test(emailInput.value)) {
     errorElement.textContent =
       "Please provide a valid university email in the format 'xxx.yyy@dome.tu.ac.th'.";
+    return false;
+  } else {
+    errorElement.textContent = ""; // Clear the error message when valid
+  }
+  return true;
+}
+
+// Function to validate WorkTitle
+function validateWorkTitle() {  
+  const workType = document.getElementById("workTitle");
+  const WorkTypePattern = /^[a-zA-Z]+$/;
+  const errorElement = document.getElementById("workError");
+  document.getElementById("show4").innerHTML = workType.value; //add show your text after input
+
+  if (!WorkTypePattern.test(workType.value)) {
+    errorElement.textContent = "Please enter your work with a letter";
     return false;
   } else {
     errorElement.textContent = ""; // Clear the error message when valid
@@ -58,6 +74,7 @@ function validateFormOnInput() {
   validateName();
   validateStudentID();
   validateEmail();
+  validateWorkTitle(); // call validateWorkTitle here
 }
 
 // Function to fetch activity types from the backend
@@ -76,9 +93,6 @@ async function fetchActivityTypes() {
     return [];
   }
 }
-
-const workType = document.getElementById("workTitle");
-document.getElementById("show4").innerHTML = workType.value;
 
 // Function to populate activity types in the select element
 function populateActivityTypes(activityTypes) {
@@ -103,7 +117,7 @@ async function submitForm(event) {
   event.preventDefault();
 
   // Validate form inputs before submission
-  if (!validateName() || !validateStudentID() || !validateEmail()) {
+  if (!validateName() || !validateStudentID() || !validateEmail() || !validateWorkTitle()) {
     return;
   }
 
@@ -178,7 +192,47 @@ document.getElementById("myForm").addEventListener("submit", submitForm);
 
 // Event listeners for input validation on user input
 document.getElementById("fullname").addEventListener("input", validateName);
-document
-  .getElementById("studentID")
-  .addEventListener("input", validateStudentID);
+document.getElementById("studentID").addEventListener("input", validateStudentID);
 document.getElementById("email").addEventListener("input", validateEmail);
+document.getElementById("workTitle").addEventListener("input", validateWorkTitle); // add Event Listener here
+
+// addEventListener - input event to validate value for submit show
+document.getElementById("fullname").addEventListener("input", function() {
+  const submitShowDiv = document.querySelector(".submit-show");
+
+  if (this.value.trim() !== "") {
+    submitShowDiv.style.display = "block";
+  } else {
+    submitShowDiv.style.display = "none";
+  }
+});
+
+document.getElementById("studentID").addEventListener("input", function() {
+  const submitShowDiv = document.querySelector(".submit-show");
+
+  if (this.value.trim() !== "") {
+    submitShowDiv.style.display = "block";
+  } else {
+    submitShowDiv.style.display = "none";
+  }
+});
+
+document.getElementById("email").addEventListener("input", function() {
+  const submitShowDiv = document.querySelector(".submit-show");
+
+  if (this.value.trim() !== "") {
+    submitShowDiv.style.display = "block";
+  } else {
+    submitShowDiv.style.display = "none";
+  }
+});
+
+document.getElementById("workTitle").addEventListener("input", function() {
+  const submitShowDiv = document.querySelector(".submit-show");
+
+  if (this.value.trim() !== "") {
+    submitShowDiv.style.display = "block";
+  } else {
+    submitShowDiv.style.display = "none";
+  }
+});

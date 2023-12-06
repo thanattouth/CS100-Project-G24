@@ -89,5 +89,11 @@ body {
     border-radius: 0.5rem;
     border: 1px solid #ccc;
     color: black;
-    text-align: center;
+    font-weight: bold;
+    display: none;
+  }
+
+  .submit-show p {
+    font-weight: bold;
+    color: crimson;
   }
