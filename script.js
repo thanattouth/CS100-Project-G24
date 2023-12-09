@@ -236,3 +236,15 @@ document.getElementById("workTitle").addEventListener("input", function() {
     submitShowDiv.style.display = "none";
   }
 });
+var container = document.querySelector(".container");
+
+container.addEventListener("mousemove", function (e) {
+  container.style.backgroundPositionX = -e.offsetX * 1.32 + "px";
+  container.style.backgroundPositionY = -e.offsetY * 0.455 + "px";
+});
+
+//reset the background positions back to the original on mouseleave
+
+container.addEventListener("mouseleave", function () {
+  container.style.backgroundPosition = "0px 0px";
+});
