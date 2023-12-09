@@ -125,9 +125,6 @@ async function submitForm(event) {
   const endDateInput = document.getElementById("endDate").value;
   const startDate = new Date(startDateInput);
   const endDate = new Date(endDateInput);
-  document.getElementById("show8").innerHTML = startDate.value;
-  document.getElementById("show9").innerHTML = endDate.value;
-  
 
   if (endDate <= startDate) {
     alert("End datetime should be after the start datetime.");
@@ -235,16 +232,4 @@ document.getElementById("workTitle").addEventListener("input", function() {
   } else {
     submitShowDiv.style.display = "none";
   }
-});
-var container = document.querySelector(".container");
-
-container.addEventListener("mousemove", function (e) {
-  container.style.backgroundPositionX = -e.offsetX * 1.32 + "px";
-  container.style.backgroundPositionY = -e.offsetY * 0.455 + "px";
-});
-
-//reset the background positions back to the original on mouseleave
-
-container.addEventListener("mouseleave", function () {
-  container.style.backgroundPosition = "0px 0px";
 });

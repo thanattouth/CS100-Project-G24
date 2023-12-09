@@ -63,9 +63,11 @@ h1 {
 }
 .home {
     padding: 2rem 2rem 2rem 2rem;
+    color: black;
 }
 .home h3 {
     font-size: 1.5rem;
+    color: black;
 }
 .about {
     padding: 2rem 2rem 2rem 2rem;
@@ -96,6 +98,11 @@ h1 {
 }
 .contact h2 {
     text-align: center;
+    margin-bottom: 5rem;
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
 }
 .contact ul li {
     border-radius: 1rem;
@@ -145,53 +152,38 @@ h1 {
 }
 
 /* responsive */
-/* For mobile phones: */
-[class*="col-"] {
-    width: 100%;
-}
-  
-@media only screen and (min-width: 600px) {
-/* For tablets: */
-    .col-s-1 {width: 8.33%;}
-    .col-s-2 {width: 16.66%;}
-    .col-s-3 {width: 25%;}
-    .col-s-4 {width: 33.33%;}
-    .col-s-5 {width: 41.66%;}
-    .col-s-6 {width: 50%;}
-    .col-s-7 {width: 58.33%;}
-    .col-s-8 {width: 66.66%;}
-    .col-s-9 {width: 75%;}
-    .col-s-10 {width: 83.33%;}
-    .col-s-11 {width: 91.66%;}
-    .col-s-12 {width: 100%;}
-}
-  
-@media only screen and (min-width: 768px) {
-/* For desktop: */
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
-}
 
-nav ul li img {
-    width: 100%;
-    max-width: 16rem;
-    height: auto;
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
+.about figure {
+    width: 20%; /* ปรับความกว้างของแต่ละ figure ตามที่คุณต้องการ */
+    margin: 10px; /* ปรับระยะห่างระหว่างแต่ละ figure ตามที่คุณต้องการ */
+    text-align: center;
+}
+.about img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* ทำให้รูปภาพยืดหยุ่นตามขนาดของพื้นที่ที่ให้มา */
+}
+.about .flex h3 {
+    color: black;
+}
+.about .flex h4 {
+    color: black;
+}
+  
 @media only screen and (min-width: 600px) {
-    .about ul li img {
-        width: 80%;
-        max-width: 16rem;
+    .about img {
+        width: 100%;
         height: auto;
+        max-width: 100%; /* ทำให้รูปภาพยืดหยุ่นตามขนาดของพื้นที่ที่ให้มา */
+    }
+    .about figure {
+        width: 30%;
     }
     .about {
         padding: 2rem 2rem 2rem 2rem;
@@ -200,28 +192,15 @@ nav ul li img {
         text-align: center;
         margin-bottom: 5rem;
     }
-    .about ul {
-        align-items: center;
-        text-align: center;
-    }
-    .about ul li {
-        margin-left: 2rem;
-        margin-right: 2rem;
-    }
 }
 @media only screen and (max-width: 599px) {
-    .about ul li img {
-        width: 50%;
-        max-width: 16rem;
+    .about img {
+        width: 100%;
         height: auto;
+        max-width: 100%; /* ทำให้รูปภาพยืดหยุ่นตามขนาดของพื้นที่ที่ให้มา */
     }
-    .about ul {
-        align-items: center;
-        text-align: center;
-    }
-    .about ul li {
-        margin-left: 2rem;
-        margin-right: 2rem;
+    .about figure {
+        width: 30%;
     }
     .about h2 {
         text-align: center;
@@ -231,11 +210,12 @@ nav ul li img {
         border-radius: 0.5rem;
     }
 }
-@media only screen and (min-width: 821px) {
-    .about ul li img {
-        width: 100%;
-        max-width: 16rem;
+@media only screen and (min-width: 1025px) {
+    .about img {
+        width: 80%;
         height: auto;
+        max-width: 100%; /* ทำให้รูปภาพยืดหยุ่นตามขนาดของพื้นที่ที่ให้มา */
+        border-radius: 10%;
     }
     .about {
         padding: 2rem 2rem 2rem 2rem;
@@ -244,12 +224,26 @@ nav ul li img {
         text-align: center;
         margin-bottom: 7rem;
     }
-    .about ul {
-        align-items: center;
-        text-align: center;
+    figcaption {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    } 
+    .snip1113:hover figcaption {
+        opacity: 1;
     }
-    .about ul li {
-        margin-left: 2rem;
-        margin-right: 2rem;
+    .snip1113 h3 {
+        margin: 10px 0;
+    }
+    .snip1113 span {
+        display: block;
+        font-size: 0.8em;
+        color: black;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .snip1113:hover span {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
